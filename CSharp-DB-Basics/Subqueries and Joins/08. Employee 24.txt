@@ -1,0 +1,12 @@
+--Problem 8.Employee 24
+SELECT E.EmployeeID, FirstName,
+CASE WHEN DATEPART(YEAR, [p].[StartDate]) >= 2005 
+			THEN NULL
+			ELSE [p].[Name]
+	   END AS [ProjectName]
+FROM Employees AS E
+JOIN EmployeesProjects AS EP
+ON E.EmployeeID = EP.EmployeeID
+ JOIN Projects AS P
+ON EP.ProjectID = P.ProjectID
+WHERE E.EmployeeID = '24'
