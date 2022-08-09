@@ -1,0 +1,7 @@
+--Problem 9.Employee Manager
+SELECT E.EmployeeID, E.FirstName, M.EmployeeID AS ManagerID, M.FirstName AS ManagerName
+FROM Employees AS E
+INNER JOIN Employees AS M
+ON E.ManagerID = M.EmployeeID
+WHERE M.EmployeeID IN(3,7)
+ORDER BY E.EmployeeID
