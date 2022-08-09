@@ -1,0 +1,7 @@
+--Problem 3.Sales Employee
+	SELECT EmployeeID, FirstName, LastName, D.Name AS DepartmentName
+	FROM Employees
+	INNER JOIN Departments D
+	ON Employees.DepartmentID = D.DepartmentID
+	WHERE d.Name = ('Sales')
+	ORDER BY EmployeeID
